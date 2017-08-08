@@ -8,6 +8,7 @@ class TestRandom < Minitest::Test
 	end
 
 	def test_assert_that_there_is_an_array
+		student_name = ""
 		assert_equal([],student_list(student_name))
 	end
 
