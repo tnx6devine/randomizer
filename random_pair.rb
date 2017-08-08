@@ -1,10 +1,29 @@
 def student_list(student_name)
-	student_array = []
-	if student_name != ""
-		student_array.push(student_name)
+	$student_array = []
+	if student_name != nil
+		student_name.each do |name|
+			$student_array.push(name)
+		end
 	end
-	student_array
+	$student_array
 end
+
+def student_count(student_name)
+	# student_list(student_name)
+	number_of_students = $student_array.count
+	number_of_students
+end
+
+def randomize_student_list(student_name)
+	random_array = $student_array.shuffle
+end
+
+def run_randomizer(student_name)
+student_list(student_name)
+student_count(student_name)
+end
+
+
 
 # def teacher_input_array(student_name)
 # 	student_array = []
