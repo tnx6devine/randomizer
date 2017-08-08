@@ -15,15 +15,33 @@ def student_count(student_name)
 end
 
 def randomize_student_list(student_name)
-	random_array = $student_array.shuffle
+	$random_array = $student_array.shuffle
+end
+
+def assign_pairs(student_name)
+	counter = 0
+	evens_array = []
+	odds_array = []
+	if $random_array[counter] % 2 == 0
+		evens_array.push($random_array[counter])
+	else
+		odds_array.push($random_array[counter])
+	end
+	puts "evens array is #{evens_array}"
+	puts "odds array is #{odds_array}"
+	if evens_array >= 1 && odds_array >= 1
+		true
+	else
+		false
+	end
 end
 
 def run_randomizer(student_name)
 student_list(student_name)
 student_count(student_name)
+randomize_student_list(student_name)
+assign_pairs(student_name)
 end
-
-
 
 # def teacher_input_array(student_name)
 # 	student_array = []

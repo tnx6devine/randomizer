@@ -50,4 +50,8 @@ class TestRandom < Minitest::Test
 		student_name = ["heremuy", "fish", "computer"]
 		assert_equal(3, run_randomizer(student_name))
 	end
+
+	def test_assert_that_randomizer_makes_two_arrays
+		student_name = ["heremuy", "fish", "computer"]
+		assert_equal(true, assign_pairs(student_name))
 end
