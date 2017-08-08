@@ -9,6 +9,7 @@ def student_list(student_name)
 end
 
 def student_count(student_name)
+	student_list(student_name)
 	# student_list(student_name)
 	number_of_students = $student_array.count
 	number_of_students
@@ -17,12 +18,14 @@ end
 
 
 def divide_group(student_name)
+	student_count(student_name)
 	$random_array = $student_array.shuffle
 	counter = 0
 	$evens_array = []
 	$odds_array = []
 	puts "random array is #{$random_array}"
-	$random_array.count do 
+	total_number_of_kids = $random_array.count
+	total_number_of_kids.times do 
 		if counter % 2 == 0
 			$evens_array.push($random_array[counter])
 			counter = counter + 1
@@ -41,17 +44,27 @@ def divide_group(student_name)
 end
 
 def create_pairs(student_name)
-	counter = 0
-	pairs = {}
-	number_of_pairs = $even_array.count
+
 #need to compare position of even and odd array and assign in puts message or new hash or array
-	number_of_pairs.times do
-		pairs[:$evens_array[counter]] = $odds_array[counter]
-		puts pairs
-		counter = counter + 1
+	# the following didn't work
+	# number_of_pairs = $even_array.count
+	# pairs {}
+	# number_of_pairs.times do
+	# 	pairs[:$evens_array[counter]] = $odds_array[counter]
+	# end
+	divide_group(student_name)
+	counter = 0
+	puts "create pairs random array is #{$random_array}"
+	partner_array = []
+	if $evens_array.count > 0
+		number_of_pairs = $evens_array.count
+		number_of_pairs.times do
+			partner_array.push($evens_array[counter], " and ", $odds_array[counter])
+			counter = counter + 1
+			puts partner_array
+		end
 	end
-	puts pairs
-	pairs
+	counter
 end
 
 def run_randomizer(student_name)
