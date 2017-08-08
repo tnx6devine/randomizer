@@ -31,24 +31,27 @@ def divide_group(student_name)
 			counter = counter + 1
 		end
 	end
-	puts "evens array is #{evens_array}"
-	puts "odds array is #{odds_array}"
-	if evens_array.count > 0 && odds_array.count > 0
+	puts "evens array is #{$evens_array}"
+	puts "odds array is #{$odds_array}"
+	if $evens_array.count > 0 && $odds_array.count > 0
 		true
 	else
 		false
 	end
 end
 
-def create_pairs (student_name)
+def create_pairs(student_name)
 	counter = 0
+	pairs = {}
+	number_of_pairs = $even_array.count
 #need to compare position of even and odd array and assign in puts message or new hash or array
-	evens_array.each do |individual|
-		pairs = {individual: odds_array[counter]}
+	number_of_pairs.times do
+		pairs[:$evens_array[counter]] = $odds_array[counter]
 		puts pairs
 		counter = counter + 1
 	end
-
+	puts pairs
+	pairs
 end
 
 def run_randomizer(student_name)

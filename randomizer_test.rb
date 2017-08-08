@@ -49,7 +49,8 @@ class TestRandom < Minitest::Test
 
 	def test_assert_that_four_names_is_two_groups
 		student_name = ["heremuy", "fish", "computer", "charles"]
-		assert_equal(2, student_list(student_name))
+		assert_equal(2, create_pairs(student_name).count)
+	end
 	# following test no longer valid, becaue we break array into two arrays in later function
 	# def test_assert_that_student_array_count_is_same_number_of_names
 	# 	student_name = ["heremuy", "fish", "computer"]
